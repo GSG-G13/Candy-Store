@@ -1,5 +1,6 @@
-// eslint-disable-next-line linebreak-style
-const dbConnection = require('../../database/config/connection');
-
-const getFlavers = () => dbConnection.query('select * from category');
-module.exports = { getFlavers };
+const {getFlavers} = require('../../database/queries/flavors');
+exports.getFlav = (req,res) =>{
+    getFlavers()
+    .then(result=>{res.json(result.rows)})
+    .catch(err=>console.log('err',err));
+    };

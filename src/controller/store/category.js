@@ -1,6 +1,7 @@
-const dbConnection = require('../../database/config/connection');
-
-const getCategories = () => dbConnection.query('select * from category');
-module.exports = {
-  getCategories,
+const {getCategories} = require('../../database/queries/categories');
+exports.getCat = (req,res) =>{
+getCategories()
+.then(result=>{res.json(result.rows)})
+.catch(err=>console.log('err',err));
 };
+
