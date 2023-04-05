@@ -1,13 +1,4 @@
 BEGIN;
-<<<<<<< HEAD
-DROP TABLE category,
-flavor,
-candy IF EXISTS;
-CREATE TABLE category(
-    id SERIAL PRIMARY key,
-    name VARCHAR(50) not null,
-    img_url VARCHAR(100) not null
-=======
 DROP TABLE IF EXISTS category,
 flavor,
 candy cascade;
@@ -15,28 +6,17 @@ CREATE TABLE category(
     id SERIAL PRIMARY key,
     name VARCHAR(50) not null,
     img_url VARCHAR(255) not null
->>>>>>> 323a4da27cdf592baaf0b59394b09676ffe68fbf
 );
 CREATE TABLE flavor(
     id SERIAL PRIMARY key,
     name VARCHAR(50) not null,
-<<<<<<< HEAD
     img_url VARCHAR(100) not null
-=======
-    img_url VARCHAR(255) not null
->>>>>>> 323a4da27cdf592baaf0b59394b09676ffe68fbf
 );
 CREATE TABLE candy (
     id SERIAL PRIMARY key,
     name VARCHAR(50) not null,
     quantity INTEGER DEFAULT(10),
-<<<<<<< HEAD
     img_url VARCHAR(100) not null,
-    category_id INTEGER REFERENCES category(id),
-    flavor_id INTEGER REFERENCES flavor(id)
-);
-=======
-    img_url VARCHAR(255) not null,
     category_id INTEGER REFERENCES category(id),
     flavor_id INTEGER REFERENCES flavor(id)
 );
@@ -122,5 +102,4 @@ values (
         'Coconut',
         'https://cdn.shopify.com/s/files/1/0614/8309/0107/collections/Gummy-Candy-CandyStore-com-652_360x.jpg?v=1677188146'
     );
->>>>>>> 323a4da27cdf592baaf0b59394b09676ffe68fbf
 COMMIT;
