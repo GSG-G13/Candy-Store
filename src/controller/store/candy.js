@@ -1,4 +1,5 @@
 const {getCandy,addCandy, deleteCandy} = require('../../database/queries/candy');
+const { join }= require('path');
 const getCandies = (req, res) => {
     getCandy()
       .then(result => {
@@ -13,9 +14,16 @@ const getCandies = (req, res) => {
     .then(() => res.redirect("/"))
     .catch(err => console.log("err:", err));
   }
+
   const deleteCandies = (req,res)=>{
     deleteCandy(req.params.id)
-    .then(() => res.redirect("/"))
+    .then(() => res.redirect("/") )//
     .catch(err => console.log("err:", err));
   };
-  module.exports = {getCandies,addNewCandy,deleteCandies};
+
+
+  const getAddForm=(req,res)=>{
+    res.sendFile(join(__dirname,'..','..','..','public','addCAndyForm.html'));
+  }
+  
+  module.exports = {getCandies,addNewCandy,deleteCandies,getAddForm};
