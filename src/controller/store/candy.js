@@ -1,4 +1,4 @@
-const {getCandy,addCandy} = require('../../database/queries/candy');
+const {getCandy,addCandy, deleteCandy} = require('../../database/queries/candy');
 const getCandies = (req, res) => {
     getCandy()
       .then(result => {
@@ -13,4 +13,9 @@ const getCandies = (req, res) => {
     .then(() => res.redirect("/"))
     .catch(err => console.log("err:", err));
   }
-  module.exports = {getCandies,addNewCandy};
+  const deleteCandies = (req,res)=>{
+    deleteCandy(req.params.id)
+    .then(() => res.redirect("/"))
+    .catch(err => console.log("err:", err));
+  };
+  module.exports = {getCandies,addNewCandy,deleteCandies};
