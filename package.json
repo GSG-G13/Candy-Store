@@ -9,13 +9,9 @@
   "scripts": {
     "start": "cross-env NODE_ENV=production node src/index.js",
     "dev": "cross-env NODE_ENV=development nodemon src/index.js",
-<<<<<<< HEAD
-    "test": " cross-env NODE_ENV=test jest"
-=======
     "test": " cross-env NODE_ENV=test jest",
     "build:db": "cross-env NODE_ENV=development node src/database/config/run_build",
     "prod:build:db": "cross-env NODE_ENV=production node src/database/config/run_build"
->>>>>>> 323a4da27cdf592baaf0b59394b09676ffe68fbf
   },
   "repository": {
     "type": "git",
@@ -34,18 +30,12 @@
     "pg": "^8.10.0"
   },
   "devDependencies": {
-<<<<<<< HEAD
     "eslint": "^8.37.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.27.5",
-=======
->>>>>>> 323a4da27cdf592baaf0b59394b09676ffe68fbf
     "jest": "^29.5.0",
     "nodemon": "^2.0.22",
     "supertest": "^6.3.3"
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 323a4da27cdf592baaf0b59394b09676ffe68fbf
+
