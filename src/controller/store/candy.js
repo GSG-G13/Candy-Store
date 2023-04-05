@@ -1,10 +1,16 @@
-const {getCandy} = require('../../database/queries/candy');
+const {getCandy,addCandy} = require('../../database/queries/candy');
 const getCandies = (req, res) => {
-  console.log('dsgsdfd');
     getCandy()
       .then(result => {
         res.json(result.rows);
       })
       .catch(err => console.log("err:", err));
   };
-  module.exports = {getCandies};
+
+  const addNewCandy = (req,res)=>{
+    const candyInfo = req.body;
+    addCandy(candyInfo)
+    .then(() => res.redirect("/"))
+    .catch(err => console.log("err:", err));
+  }
+  module.exports = {getCandies,addNewCandy};

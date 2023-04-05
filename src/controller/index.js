@@ -1,4 +1,4 @@
-const {getCandies} = require('./store/candy');
+const {getCandies,addNewCandy} = require('./store/candy');
 
-module.exports = {getCandies};
+module.exports = {getCandies,addNewCandy};
 
