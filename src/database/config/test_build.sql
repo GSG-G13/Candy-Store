@@ -4,19 +4,19 @@ flavor,
 candy cascade;
 CREATE TABLE category(
     id SERIAL PRIMARY key,
-    name VARCHAR(50) not null,
+    name VARCHAR(255) not null,
     img_url VARCHAR(255) not null
 );
 CREATE TABLE flavor(
     id SERIAL PRIMARY key,
-    name VARCHAR(50) not null,
-    img_url VARCHAR(100) not null
+    name VARCHAR(255) not null,
+    img_url VARCHAR(255) not null
 );
 CREATE TABLE candy (
     id SERIAL PRIMARY key,
-    name VARCHAR(50) not null,
+    name VARCHAR(255) not null,
     quantity INTEGER DEFAULT(10),
-    img_url VARCHAR(100) not null,
+    img_url VARCHAR(255) not null,
     category_id INTEGER REFERENCES category(id),
     flavor_id INTEGER REFERENCES flavor(id)
 );
@@ -102,4 +102,11 @@ values (
         'Coconut',
         'https://cdn.shopify.com/s/files/1/0614/8309/0107/collections/Gummy-Candy-CandyStore-com-652_360x.jpg?v=1677188146'
     );
+INSERT INTO candy (name, quantity, img_url, category_id, flavor_id)
+values ('candy1', 1, 'test1', 1, 1),
+    ('candy2', 2, 'test2', 2, 2),
+    ('candy3', 3, 'test3', 3, 3),
+    ('candy4', 4, 'test', 4, 4),
+    ('candy', 5, 'test', 5, 5),
+    ('candy', 6, 'test', 6, 6);
 COMMIT;
