@@ -1,10 +1,15 @@
 const add_button = document.querySelector('.addCandyButton'); 
 const delete_button = document.querySelector('.addCandyButton'); 
-const category_id = document.querySelector('.category_id'); 
-const flavor_id = document.querySelector('.flavor_id');
+
 
 fetchFunction('/candies')
 .then((res) =>createCard(res));
+
+fetchFunction('/categories')
+.then((res) =>createList('category',res));
+
+fetchFunction('/flavors')
+.then((res) =>createList('flavor',res));
 
 add_button.addEventListener('click',()=>{
     window.location.href = "/addCandyForm";

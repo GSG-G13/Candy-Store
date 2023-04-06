@@ -1,4 +1,6 @@
 const cardsContainer = document.querySelector('.card_container');
+const category_id = document.querySelector('.category_id'); 
+const flavor_id = document.querySelector('.flavor_id');
 const createCard = (data) => {
   cardsContainer.textContent = '';
   data.forEach((element) => {
@@ -42,3 +44,35 @@ const createCard = (data) => {
     cardsContainer.append(card);
   });
 };
+
+const createList=(type,data)=>{
+  
+  data.forEach((element)=>{
+    let option = document.createElement('option');
+    option.textContent = element.name;
+    option.value = element.name; 
+    if (type === "category"){
+      category_id.append(option);
+    }else if (type === "flavor"){
+      flavor_id.append(option);
+    }
+    
+  }
+  );
+}; 
+
+const createListWithId=(type,data)=>{
+  
+  data.forEach((element)=>{
+    let option = document.createElement('option');
+    option.textContent = element.name;
+    option.value = element.id; 
+    if (type === "category"){
+      category_id.append(option);
+    }else if (type === "flavor"){
+      flavor_id.append(option);
+    }
+    
+  }
+  );
+}; 

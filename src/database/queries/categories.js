@@ -1,6 +1,6 @@
 const dbConnection = require('../../database/config/connection');
 
-const getCategories = () => dbConnection.query('select name,img_url from category');
+const getCategories = () => dbConnection.query('select * from category');
 module.exports = {
   getCategories,
 };

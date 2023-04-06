@@ -9,7 +9,6 @@ router.delete("/delete/:id",deleteCandies);
 router.get("/categories",getCat);
 router.get("/flavors",getFlav);
 router.get("/addCandyForm",getAddForm);
-router.get("/getCandy/:category", getCandies);
 router.get("/oneFlav/:flavor",oneFlav);
 router.get("/oneCat/:category",oneCat);
 
