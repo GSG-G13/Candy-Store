@@ -11,7 +11,8 @@
     "dev": "cross-env NODE_ENV=development nodemon src/index.js",
     "test": " cross-env NODE_ENV=test jest",
     "build:db": "cross-env NODE_ENV=development node src/database/config/run_build",
-    "prod:build:db": "cross-env NODE_ENV=production node src/database/config/run_build"
+    "prod:build:db": "cross-env NODE_ENV=production node src/database/config/run_build",
+    "build": "npm i && npm run prod:build:db"
   },
   "repository": {
     "type": "git",
@@ -38,4 +39,3 @@
     "supertest": "^6.3.3"
   }
 }
-

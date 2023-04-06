@@ -3,7 +3,9 @@ const { join } = require("path");
 require("dotenv").config();
 const connection = require("./connection");
 
-const dbBuild= ()=>{
+let sql;
+
+const dbBuild = () => {
     if (process.env.NODE_ENV === "test") {
       sql = readFileSync(join(__dirname, "test_build.sql")).toString();
     } else if (process.env.NODE_ENV === "development") {
