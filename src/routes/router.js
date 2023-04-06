@@ -1,5 +1,5 @@
 const express = require("express");
-const {getCandies,addNewCandy, getCat, getFlav,deleteCandies,getAddForm,getCat, getFlav,oneFlav} = require("../controller");
+const {getCandies,addNewCandy, getCat, getFlav,deleteCandies,getAddForm,oneFlav, oneCat} = require("../controller");
 
 const router = express.Router();
 
@@ -10,8 +10,7 @@ router.get("/categories",getCat);
 router.get("/flavors",getFlav);
 router.get("/addCandyForm",getAddForm);
 router.get("/getCandy/:category", getCandies);
-
-
-router.get("/oneFlav",oneFlav)
+router.get("/oneFlav/:flavor",oneFlav);
+router.get("/oneCat/:category",oneCat);
 
 module.exports = router;
