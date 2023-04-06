@@ -12,7 +12,7 @@
     "test": " cross-env NODE_ENV=test jest",
     "build:db": "cross-env NODE_ENV=development node src/database/config/run_build",
     "prod:build:db": "cross-env NODE_ENV=production node src/database/config/run_build",
-    "build": "npm i && npm run prod:build:db"
+    "build": "npm install && npm run prod:build:db"
   },
   "repository": {
     "type": "git",
