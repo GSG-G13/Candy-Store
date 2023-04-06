@@ -11,9 +11,7 @@ if (process.env.NODE_ENV === "test"){
     dbURl = process.env.DEV_DB_URL;
 }else if (process.env.NODE_ENV === "production"){
     dbURl = process.env.DB_URL;
-    ssl = {
-        rejectAuthorized: false,
-    };
+    ssl = true;
 }
 if (!dbURl) throw new Error('No Database URL!!!');
 
