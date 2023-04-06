@@ -10,17 +10,22 @@ add_button.addEventListener('click',()=>{
     window.location.href = "/addCandyForm";
 });
 
-// category_id.addEventListener('change',()=>{
-//     fetchFunction(`/getCandy/${category_id.value}`)
-// .then((res) =>createCard(res));
-// })
+
 
 category_id.addEventListener('change',()=>{
+    if (!category_id.value){
+        fetchFunction('/candies')
+        .then((res) =>createCard(res));
+    }
     fetchFunction(`/oneCat/${category_id.value}`)
 .then((res) =>createCard(res));
 })
 
 flavor_id.addEventListener('change',()=>{
-    fetchFunction(`/oneFlav/${category_id.value}`)
+    if (!flavor_id.value){
+        fetchFunction('/candies')
+        .then((res) =>createCard(res));
+    }
+    fetchFunction(`/oneFlav/${flavor_id.value}`)
 .then((res) =>createCard(res));
 })
