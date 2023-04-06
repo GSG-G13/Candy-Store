@@ -1,6 +1,7 @@
 # Candy Store Project 
 Welcome to our Candy Store project! This is a web application that allows you to add candies that you want to sell on the site, and to buy candy if you are looking for some! All you have to do is browse the chose the ones you like the most!
 
+
 # Installation
 
 1. Clone the project repository to your local machine.
@@ -10,7 +11,9 @@ Welcome to our Candy Store project! This is a web application that allows you to
 5. PORT - the port number to run the server on (default is 5000)
 6. Run npm run dev to start the server using Nodemon.
 
-# or visit out website on ***************************
+## or visit out website on [Demo]()
+<hr>
+</br>
 
 # Technologies
 This project use many techonologes such as : 
@@ -30,7 +33,7 @@ as you can see in the iamge, there are three tables. and relaction between the t
 # Usage
 To use our Candy Store, follow these steps:
 
-1. Open a web browser and navigate to http://localhost:3000/ or visit our website.
+1. Open a web browser and navigate to http://localhost:5000/ or visit our website.
 2. If you are looknig to sell some candy, Click the "Add Candy" button to add a new candy to the store.
 3. Enter the details of the candy, including its name, image, flavor, category, and quantity.
 4. Click the "Submit" button to add the candy to the store.
