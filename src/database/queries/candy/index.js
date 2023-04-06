@@ -1,3 +1,4 @@
 const  getCandy  = require('./getAllCandies');
-
-module.exports = {getCandy};
+const  addCandy  = require('./addNewCandy');
+const  deleteCandy  = require('./deleteCandy');
+module.exports = {getCandy,addCandy,deleteCandy};
