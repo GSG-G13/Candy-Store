@@ -10,9 +10,8 @@ add_button.addEventListener('click',()=>{
     window.location.href = "/addCandyForm";
 });
 
-
-
 category_id.addEventListener('change',()=>{
+    flavor_id.value = "";
     if (!category_id.value){
         fetchFunction('/candies')
         .then((res) =>createCard(res));
@@ -22,6 +21,7 @@ category_id.addEventListener('change',()=>{
 })
 
 flavor_id.addEventListener('change',()=>{
+    category_id.value="";
     if (!flavor_id.value){
         fetchFunction('/candies')
         .then((res) =>createCard(res));
