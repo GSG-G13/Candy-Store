@@ -1,0 +1,115 @@
+BEGIN;
+DROP TABLE IF EXISTS category,
+flavor,
+candy cascade;
+CREATE TABLE category(
+    id SERIAL PRIMARY key,
+    name VARCHAR(255) not null,
+    img_url VARCHAR(255) not null
+);
+CREATE TABLE flavor(
+    id SERIAL PRIMARY key,
+    name VARCHAR(255) not null,
+    img_url VARCHAR(255) not null
+);
+CREATE TABLE candy (
+    id SERIAL PRIMARY key,
+    name VARCHAR(255) not null,
+    quantity INTEGER DEFAULT(10),
+    img_url VARCHAR(255) not null,
+    category_id INTEGER REFERENCES category(id),
+    flavor_id INTEGER REFERENCES flavor(id)
+);
+INSERT INTO category (name, img_url)
+values (
+        'Gummy candies',
+        'https://cdn.shopify.com/s/files/1/0614/8309/0107/collections/Gummy-Candy-CandyStore-com-652_360x.jpg?v=1677188146'
+    ),
+    (
+        'Chocolate bars',
+        'https://cdn.shopify.com/s/files/1/0614/8309/0107/collections/Candy-Bars-CandyStore-com-693_360x.jpg?v=1677187765'
+    ),
+    (
+        'Hard candies',
+        'https://cdn.shopify.com/s/files/1/0614/8309/0107/collections/Hard-Candy-CandyStore-com-830_360x.jpg?v=1677188338'
+    ),
+    (
+        'Sour candies',
+        'https://cdn.shopify.com/s/files/1/0614/8309/0107/collections/Sour-Candy-CandyStore-com-768_360x.jpg?v=1677188622'
+    ),
+    (
+        'Jelly beans',
+        'https://cdn.shopify.com/s/files/1/0614/8309/0107/collections/Jelly-Beans-CandyStore-com-605_360x.jpg?v=1677188344'
+    ),
+    (
+        'Licorice',
+        'https://cdn.shopify.com/s/files/1/0614/8309/0107/collections/Gummy-Candy-CandyStore-com-652_360x.jpg?v=1677188146'
+    ),
+    (
+        'Caramels',
+        'https://cdn.shopify.com/s/files/1/0614/8309/0107/collections/Gummy-Candy-CandyStore-com-652_360x.jpg?v=1677188146'
+    ),
+    (
+        'Lollipops',
+        'https://cdn.shopify.com/s/files/1/0614/8309/0107/collections/Lollipops-Suckers-CandyStore-com-40_360x.jpg?v=1677188441'
+    ),
+    (
+        'Bubble gum',
+        'https://cdn.shopify.com/s/files/1/0614/8309/0107/collections/Gummy-Candy-CandyStore-com-652_360x.jpg?v=1677188146'
+    ),
+    (
+        'Taffy',
+        'https://cdn.shopify.com/s/files/1/0614/8309/0107/collections/Gummy-Candy-CandyStore-com-652_360x.jpg?v=1677188146'
+    );
+INSERT INTO flavor (name, img_url)
+values (
+        'Chocolate',
+        'https://cdn.shopify.com/s/files/1/0614/8309/0107/collections/Gummy-Candy-CandyStore-com-652_360x.jpg?v=1677188146'
+    ),
+    (
+        'Fruit flavors',
+        'https://cdn.shopify.com/s/files/1/0614/8309/0107/collections/Gummy-Candy-CandyStore-com-652_360x.jpg?v=1677188146'
+    ),
+    (
+        'Mint',
+        'https://cdn.shopify.com/s/files/1/0614/8309/0107/collections/Gummy-Candy-CandyStore-com-652_360x.jpg?v=1677188146'
+    ),
+    (
+        'Caramel',
+        'https://cdn.shopify.com/s/files/1/0614/8309/0107/collections/Gummy-Candy-CandyStore-com-652_360x.jpg?v=1677188146'
+    ),
+    (
+        'Vanilla',
+        'https://cdn.shopify.com/s/files/1/0614/8309/0107/collections/Gummy-Candy-CandyStore-com-652_360x.jpg?v=1677188146'
+    ),
+    (
+        'Sour flavors',
+        'https://cdn.shopify.com/s/files/1/0614/8309/0107/collections/Gummy-Candy-CandyStore-com-652_360x.jpg?v=1677188146'
+    ),
+    (
+        'Licorice',
+        'https://cdn.shopify.com/s/files/1/0614/8309/0107/collections/Gummy-Candy-CandyStore-com-652_360x.jpg?v=1677188146'
+    ),
+    (
+        'Bubble gum',
+        'https://cdn.shopify.com/s/files/1/0614/8309/0107/collections/Gummy-Candy-CandyStore-com-652_360x.jpg?v=1677188146'
+    ),
+    (
+        'Peanut butter',
+        'https://cdn.shopify.com/s/files/1/0614/8309/0107/collections/Gummy-Candy-CandyStore-com-652_360x.jpg?v=1677188146'
+    ),
+    (
+        'Coconut',
+        'https://cdn.shopify.com/s/files/1/0614/8309/0107/collections/Gummy-Candy-CandyStore-com-652_360x.jpg?v=1677188146'
+    );
+
+
+insert into candy(name, quantity, img_url, category_id, flavor_id)
+values('candy', 1, 'test', 1, 1),
+    ('candy', 2, 'test', 2, 2),
+    ('candy', 3, 'test', 3, 3),
+    ('candy', 4, 'test', 4, 4),
+    ('candy', 5, 'test', 5, 5),
+    ('candy', 6, 'test', 6, 6);
+
+COMMIT;
